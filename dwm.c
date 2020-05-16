@@ -249,7 +249,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
-	// [EnterNotify] = enternotify,
+	// [EnterNotify] = enternotify, /* To re-enable, also uncommomment the enternotify function */
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
@@ -752,6 +752,8 @@ drawbars(void)
 }
 
 void
+
+/*
 enternotify(XEvent *e)
 {
 	Client *c;
@@ -769,6 +771,7 @@ enternotify(XEvent *e)
 		return;
 	focus(c);
 }
+*/
 
 void
 expose(XEvent *e)
