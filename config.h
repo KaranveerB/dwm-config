@@ -27,8 +27,8 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%"
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /* tagging */
-static const char *tags[] = { "◯", "◯", "◯", "◯", "◯", "◯", "◯", "◯", "◯" };
-// static const char *tagsalt[] = { "🞊", "🞊", "🞊", "🞊", "🞊", "🞊", "🞊", "🞊", "🞊" };
+static const char *tags[] = { "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘" };
+// static const char *tagsalt[] = { "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗" };
 
 static const Rule rules[] = {
 	/* xprop(1):
