@@ -13,10 +13,10 @@ static const char *fonts[]          = { "DejaVu Sans Mono:size=9:antialias=true:
 static const char dmenufont[]       = "DejaVu Sans Moni:size=9:antialias=true:autohint=true";
 
 static const char norm_fg[]         = "#a2dfef";
-static const char norm_bg[]         = "#030725";
+static const char norm_bg[]         = "#010311";
 static const char norm_border[]     = "#719ca7";
 static const char sel_fg[]          = "#a2dfef";
-static const char sel_bg[]          = "#18aaec";
+static const char sel_bg[]          = "#030725";
 static const char sel_border[]      = "#a2dfef";
 
 static const char *colors[][3]      = {
