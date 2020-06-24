@@ -12,12 +12,19 @@ static const char *fonts[]          = { "DejaVu Sans Mono:size=9:antialias=true:
 				        "Symbols Nerd Font:size=9:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVu Sans Moni:size=9:antialias=true:autohint=true";
 
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-#include "/home/lost/.cache/wal/colors-wal-dwm.h"
+static const char norm_fg[]         = "#a2dfef";
+static const char norm_bg[]         = "#030725";
+static const char norm_border[]     = "#719ca7";
+static const char sel_fg[]          = "#a2dfef";
+static const char sel_bg[]          = "#18aaec";
+static const char sel_border[]      = "#a2dfef";
+
+static const char *colors[][3]      = {
+    /*               fg           bg         border                         */
+    [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
+    [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
+};
+
 
 /* audio */
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
