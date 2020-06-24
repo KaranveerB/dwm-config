@@ -17,7 +17,7 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-#include "/home/<USER>/.cache/wal/colors-wal-dwm.h"
+#include "/home/lost/.cache/wal/colors-wal-dwm.h"
 
 /* audio */
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
