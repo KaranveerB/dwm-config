@@ -15,7 +15,7 @@ static const char dmenufont[]       = "DejaVu Sans Moni:size=9:antialias=true:au
 static const char norm_fg[]         = "#a2dfef";
 static const char norm_bg[]         = "#010311";
 static const char norm_border[]     = "#719ca7";
-static const char sel_fg[]          = "#105ed0";
+static const char sel_fg[]          = "#18aaec";
 static const char sel_bg[]          = "#010311";
 static const char sel_border[]      = "#a2dfef";
 
