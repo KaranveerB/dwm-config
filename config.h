@@ -8,8 +8,8 @@ static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 24;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVu Sans Mono:size=9:antialias=true:autohint=true",
-				        "Symbols Nerd Font:size=9:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Symbols Nerd Font:size=9:antialias=true:autohint=true",
+					"DejaVu Sans Mono:size=9:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVu Sans Moni:size=9:antialias=true:autohint=true";
 
 static const char norm_fg[]         = "#a2dfef";
@@ -41,7 +41,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
