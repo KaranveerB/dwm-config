@@ -25,12 +25,6 @@ static const char *colors[][3]      = {
     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
 };
 
-
-/* audio */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-
 /* tagging */
 static const char *tags[] = { "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘" };
 // static const char *tagsalt[] = { "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗" };
@@ -41,6 +35,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+
 };
 
 /* layout(s) */
@@ -83,10 +79,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 
 	/* volume */
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn,      {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute,         spawn,      {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,      {.v = upvol   } },
-
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,      SHCMD("pactl set-sink-volume 0 +5% && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,      SHCMD("pactl set-sink-volume 0 +1% && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn,      SHCMD("pactl set-sink-volume 0 -5% && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,      SHCMD("pactl set-sink-volume 0 -1% && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("pactl set-sink-mute 0 toggle && kill -35 $(pidof dwmblocks)") },
+	
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	
