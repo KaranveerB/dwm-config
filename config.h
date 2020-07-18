@@ -10,7 +10,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Symbols Nerd Font:size=9:antialias=true:autohint=true",
 					"DejaVu Sans Mono:size=9:antialias=true:autohint=true" };
-static const char dmenufont[]       = "DejaVu Sans Moni:size=9:antialias=true:autohint=true";
+static const char dmenufont[]       = "DejaVu Sans Mono:size=9:antialias=true:autohint=true";
 
 static const char norm_fg[]         = "#a2dfef";
 static const char norm_bg[]         = "#010311";
@@ -25,6 +25,10 @@ static const char *colors[][3]      = {
     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
 };
 
+static const char *const autostart[] = {
+	"termite -e bashtop -t 'as-Bashtop'"
+};
+
 /* tagging */
 static const char *tags[] = { "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘" };
 // static const char *tagsalt[] = { "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗", "⭗" };
@@ -34,9 +38,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-
+	/* class      instance    title               tags mask     isfloating   monitor */
+	{ "Firefox",  NULL,       NULL,               1 << 8,       0,           -1 },
+	{ "termite",  NULL,       "as-bashtop"        1 << 0,       0,           2  }, 
 };
 
 /* layout(s) */
