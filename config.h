@@ -8,7 +8,7 @@ static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 24;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Symbols Nerd Font:size=9:antialias=true:autohint=true",
+static const char *fonts[]          = { "Symbols Nerd Font:size=10:antialias=true:autohint=true",
 					"DejaVu Sans Mono:size=9:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=9:antialias=true:autohint=true";
 
@@ -40,7 +40,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title               tags mask     isfloating   monitor */
 	{ "Firefox",  NULL,       NULL,               1 << 8,       0,           -1 },
-	{ "termite",  NULL,       "as-bashtop"        1 << 0,       0,           2  }, 
+	{ "termite",  NULL,       "as-bashtop",       1,            0,           2  }, 
 };
 
 /* layout(s) */
