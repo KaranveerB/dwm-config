@@ -1517,13 +1517,25 @@ void
 setmfact(const Arg *arg)
 {
 	float f;
+	unsigned int i;
 
 	if (!arg || !selmon->lt[selmon->sellt]->arrange)
 		return;
 	f = arg->f < 1.0 ? arg->f + selmon->mfact : arg->f - 1.0;
+	if (arg->f == 0.0)
+		f = mfact;
 	if (f < 0.05 || f > 0.95)
 		return;
 	selmon->mfact = f;
+	for(i=0; i<LENGTH(tags); ++i)
+		if(selmon->tagset[selmon->seltags] & 1<<i)
+			selmon->pertag->mfacts[i+1] = f;
+
+	if(selmon->pertag->curtag == 0)
+	{
+		selmon->pertag->mfacts[0] = f;
+	}
+
 	arrange(selmon);
 }
 
