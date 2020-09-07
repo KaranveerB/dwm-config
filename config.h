@@ -90,10 +90,10 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("pactl set-sink-mute 0 toggle && kill -35 $(pidof dwmblocks)") },
 	
 	/* brightness */
-	{ 0,                           XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl +10%") },
-	{ ShiftMask,                   XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl +1%") },
-	{ 0,                           XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl 10%-") },
-	{ 0,                           XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl 1%-") },
+	{ 0,                           XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl s +10%") },
+	{ ShiftMask,                   XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl s +1%")  },
+	{ 0,                           XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl s 10%-") },
+	{ ShiftMask,                   XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl s 1%-")  },
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	
