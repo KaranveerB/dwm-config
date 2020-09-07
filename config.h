@@ -8,9 +8,9 @@ static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 24;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Symbols Nerd Font:size=10:antialias=true:autohint=true",
-					"DejaVu Sans Mono:size=9:antialias=true:autohint=true" };
-static const char dmenufont[]       = "DejaVu Sans Mono:size=9:antialias=true:autohint=true";
+static const char *fonts[]          = { "Symbols Nerd Font:size=11:antialias=true:autohint=true",
+					"DejaVu Sans Mono:size=11:antialias=true:autohint=true" };
+static const char dmenufont[]       = "DejaVu Sans Mono:size=11:antialias=true:autohint=true";
 
 static const char norm_fg[]         = "#a2dfef";
 static const char norm_bg[]         = "#010311";
@@ -89,6 +89,11 @@ static Key keys[] = {
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,      SHCMD("pactl set-sink-volume 0 -1% && kill -35 $(pidof dwmblocks)") },
 	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("pactl set-sink-mute 0 toggle && kill -35 $(pidof dwmblocks)") },
 	
+	/* brightness */
+	{ 0,                           XF86_MonBrightnessUp,       spawn,     SHCMD("brightnessctl +10%") },
+	{ ShiftMask,                   XF86_MonBrightnessUp,       spawn,     SHCMD("brightnessctl +1%") },
+	{ 0,                           XF86_MonBrightnessDown,     spawn,     SHCMD("brightnessctl 10%-") },
+	{ 0,                           XF86_MonBrightnessDown,     spawn,     SHCMD("brightnessctl 1%-") },
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	
