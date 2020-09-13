@@ -8,7 +8,7 @@ static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 24;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Symbols Nerd Font:size=11:antialias=true:autohint=true",
+static const char *fonts[]          = { "Symbols Nerd Font:size=10:antialias=true:autohint=true",
 					"DejaVu Sans Mono:size=11:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=11:antialias=true:autohint=true";
 
@@ -71,7 +71,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_border, "-sf", sel_fg, NULL };
 static const char *termcmd[]  = { "termite", NULL };
 static const char *firefox[] = { "firefox", NULL };
-static const char *firefox_yt[] = { "firefox", "youtube.com" };
+static const char *firefox_yt[] = { "firefox", "youtube.com", "--new-window" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -83,11 +83,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 
 	/* volume */
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,      SHCMD("pactl set-sink-volume 0 +5% && kill -35 $(pidof dwmblocks)") },
-	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,      SHCMD("pactl set-sink-volume 0 +1% && kill -35 $(pidof dwmblocks)") },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn,      SHCMD("pactl set-sink-volume 0 -5% && kill -35 $(pidof dwmblocks)") },
-	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,      SHCMD("pactl set-sink-volume 0 -1% && kill -35 $(pidof dwmblocks)") },
-	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("pactl set-sink-mute 0 toggle && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,      SHCMD("amixer -q set Master 5%+ && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,      SHCMD("amixer -q set Master 1%+ && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn,      SHCMD("amixer -q set Master 5%- && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,      SHCMD("amixer -q set Master 1%- && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("amixer -D pulse set Master toggle && kill -35 $(pidof dwmblocks)") },
 	
 	/* brightness */
 	{ 0,                           XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl s +10%") },
@@ -126,7 +126,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	
+
 	/* all tag */
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
