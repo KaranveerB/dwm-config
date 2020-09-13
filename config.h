@@ -81,19 +81,33 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
-
+	
+	/* notifications */
+	{ MODKEY,                       XK_n,      spawn,     
+		SHCMD("kill -s USR1 $(pidof deadd-notification-center") }, 
+	
 	/* volume */
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,      SHCMD("amixer -q set Master 5%+ && kill -35 $(pidof dwmblocks)") },
-	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,      SHCMD("amixer -q set Master 1%+ && kill -35 $(pidof dwmblocks)") },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn,      SHCMD("amixer -q set Master 5%- && kill -35 $(pidof dwmblocks)") },
-	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,      SHCMD("amixer -q set Master 1%- && kill -35 $(pidof dwmblocks)") },
-	{ 0,                            XF86XK_AudioMute,         spawn,      SHCMD("amixer -D pulse set Master toggle && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,
+		SHCMD("amixer -q set Master 5%+ && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,
+		SHCMD("amixer -q set Master 1%+ && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn,
+		SHCMD("amixer -q set Master 5%- && kill -35 $(pidof dwmblocks)") },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,
+		SHCMD("amixer -q set Master 1%- && kill -35 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioMute,         spawn,
+		SHCMD("amixer -D pulse set Master toggle && kill -35 $(pidof dwmblocks)") },
 	
 	/* brightness */
-	{ 0,                           XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl s +10%") },
-	{ ShiftMask,                   XF86XK_MonBrightnessUp,     spawn,     SHCMD("brightnessctl s +1%")  },
-	{ 0,                           XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl s 10%-") },
-	{ ShiftMask,                   XF86XK_MonBrightnessDown,   spawn,     SHCMD("brightnessctl s 1%-")  },
+	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
+		SHCMD("brightnessctl s +10%") },
+	{ ShiftMask,                   XF86XK_MonBrightnessUp,     spawn,
+		SHCMD("brightnessctl s +1%")  },
+	{ 0,                           XF86XK_MonBrightnessDown,   spawn,
+		SHCMD("brightnessctl s 10%-") },
+	{ ShiftMask,                   XF86XK_MonBrightnessDown,   spawn,
+		SHCMD("brightnessctl s 1%-")  },
+	
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	
@@ -106,11 +120,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
+
 	/** mfact**/
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.005} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.005} },
+
 	/** cfact **/
 	// { MODKEY,                       XK_u,      setcfact,       {.f = -0.05} },
 	// { MODKEY|ShiftMask,             XK_u,      setcfact,       {.f = -0.005} },
