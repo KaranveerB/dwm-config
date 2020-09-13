@@ -128,10 +128,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.005} },
 
 	/** cfact **/
-	{ MODKEY,                       XK_u,      setcfact,       {.f = -0.025} },
-	{ MODKEY|ShiftMask,             XK_u,      setcfact,       {.f = -0.005} },
-	{ MODKEY,                       XK_i,      setcfact,       {.f = +0.025} },
-	{ MODKEY|ShiftMask,             XK_i,      setcfact,       {.f = +0.005} },
+	{ MODKEY,                       XK_o,      setcfact,       {.f = 0.00} },
+	{ MODKEY,                       XK_u,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask,             XK_u,      setcfact,       {.f = -0.1} },
+	{ MODKEY,                       XK_i,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ShiftMask,             XK_i,      setcfact,       {.f = +0.1} },
 	
 	/* kill client */
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
