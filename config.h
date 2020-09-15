@@ -84,7 +84,7 @@ static Key keys[] = {
 	
 	/* notifications */
 	{ MODKEY,                       XK_n,      spawn,     
-		SHCMD("kill -s USR1 $(pidof deadd-notification-center") }, 
+		SHCMD("kill -s USR1 $(pidof deadd-notification-center)" }, 
 	
 	/* volume */
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,
