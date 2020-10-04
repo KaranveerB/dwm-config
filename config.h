@@ -163,7 +163,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 	
 	/* power */
-	{ XK_Alt_L|ShiftMask,                     XK_l,      spawn,          SHCMD("systemctl suspend") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("systemctl suspend") },
 
 };
 
