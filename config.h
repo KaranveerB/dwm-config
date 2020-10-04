@@ -161,10 +161,10 @@ static Key keys[] = {
 	
 	/* quit dwm */
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+	
+	/* power */
+	{ XK_Alt_L|ShiftMask,                     XK_l,      spawn,          SHCMD("systemctl suspend"),
 
-	/* lenovo functions */
-	/** lock (F10) **/
-	{ XK_Alt_L,                     XK_l,      spawn,          SHCMD("systemctl suspend"),
 };
 
 /* button definitions */
