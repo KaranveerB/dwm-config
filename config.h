@@ -76,8 +76,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 	
 	/* screenshot */
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("scrot") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot --select") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("scrot --select") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot") },
 
 	/* notifications */
 	{ MODKEY,                       XK_n,      spawn,     
