@@ -25,10 +25,6 @@ static const char *colors[][3]      = {
     [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
 };
 
-static const char *const autostart[] = {
-	"termite -e bashtop -t 'as-Bashtop'"
-};
-
 /* tagging */
 static const char *tags[] = { "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘", "⭘" };
 
@@ -66,7 +62,7 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_border, "-sf", sel_fg, NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *firefox[] = { "firefox", NULL };
 static const char *firefox_yt[] = { "firefox", "--new-window", "youtube.com" };
 
@@ -79,6 +75,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 	
+	/* screenshot */
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("scrot") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot --select") },
+
 	/* notifications */
 	{ MODKEY,                       XK_n,      spawn,     
 		SHCMD("kill -s USR1 $(pidof deadd-notification-center)") }, 
