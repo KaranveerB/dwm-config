@@ -3,13 +3,14 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 3;          /* border pixel of windows */
-static const unsigned int gappx     = 2;          /* gaps between windows */
-static const unsigned int snap      = 24;         /* snap pixel */
-static const int showbar            = 1;          /* 0 means no bar */
-static const int topbar             = 1;          /* 0 means bottom bar */
-static const int usealtbar          = 1;          /* 1 means use non-dwm status bar */
-static const char *altbarclass      = "Polybar";  /* alt bar class name */
+static const unsigned int borderpx  = 3;              /* border pixel of windows */
+static const unsigned int gappx     = 2;              /* gaps between windows */
+static const unsigned int snap      = 24;             /* snap pixel */
+static const int showbar            = 1;              /* 0 means no bar */
+static const int topbar             = 1;              /* 0 means bottom bar */
+static const int usealtbar          = 1;              /* 1 means use non-dwm status bar */
+static const char *altbarclass      = "Polybar";      /* alt bar class name */
+static const char *altbarcmd        = "$HOME/tmp.sh"  /* alt bar launch command */
 static const char *fonts[]          = { "DejaVu Sans Mono:size=11:antialias=true:autohint=true",
 					"Symbols Nerd Font:size=10:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=11:antialias=true:autohint=true";
