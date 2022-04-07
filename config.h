@@ -48,8 +48,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 	
 	/* screenshot */
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("scrot --select") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("maim -s > ~/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s | xclip -selection clipboard -t image/png") },
 
 	/* notifications */
 	{ MODKEY,                       XK_n,      spawn,     
