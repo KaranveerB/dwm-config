@@ -57,15 +57,15 @@ static Key keys[] = {
 	
 	/* volume */
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,
-		SHCMD("amixer -q set Master 5%+ && kill -35 $(pidof dwmblocks)") },
+		SHCMD("amixer -q set Master 5%+)") },
 	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,
-		SHCMD("amixer -q set Master 1%+ && kill -35 $(pidof dwmblocks)") },
+		SHCMD("amixer -q set Master 1%+)") },
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn,
-		SHCMD("amixer -q set Master 5%- && kill -35 $(pidof dwmblocks)") },
+		SHCMD("amixer -q set Master 5%-)") },
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,
-		SHCMD("amixer -q set Master 1%- && kill -35 $(pidof dwmblocks)") },
+		SHCMD("amixer -q set Master 1%-)") },
 	{ 0,                            XF86XK_AudioMute,         spawn,
-		SHCMD("amixer -D pulse set Master toggle && kill -35 $(pidof dwmblocks)") },
+		SHCMD("amixer -D pulse set Master toggle)") },
 	
 	/* brightness */
 	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
