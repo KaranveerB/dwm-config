@@ -57,15 +57,15 @@ static Key keys[] = {
 	
 	/* volume */
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,
-		SHCMD("amixer -q set Master 5%+)") },
+		SCCMD("pamixer -i 5") },
 	{ ShiftMask,                    XF86XK_AudioRaiseVolume,  spawn,
-		SHCMD("amixer -q set Master 1%+)") },
+		SCCMD("pamixer -i 1") },
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn,
-		SHCMD("amixer -q set Master 5%-)") },
+		SCCMD("pamixer -d 5") },
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,  spawn,
-		SHCMD("amixer -q set Master 1%-)") },
+		SCCMD("pamixer -d 1") },
 	{ 0,                            XF86XK_AudioMute,         spawn,
-		SHCMD("amixer -D pulse set Master toggle)") },
+		SCCMD("pamixer -t") },
 	
 	/* brightness */
 	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
