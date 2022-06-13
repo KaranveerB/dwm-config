@@ -33,7 +33,8 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_border, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb",
+	norm_bg, "-nf", norm_fg, "-sb", sel_border, "-sf", sel_fg, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *firefox[] = { "firefox", NULL };
 static const char *firefox_yt[] = { "firefox", "--new-window", "youtube.com" };
@@ -48,8 +49,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = firefox_yt } },
 	
 	/* screenshot */
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("maim -s -k -B -u > ~/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s -k -B -u | xclip -selection clipboard -t image/png") },
+	{ MODKEY,                       XK_s,      spawn,
+		SHCMD("maim -s -k -B -u > ~/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,
+		SHCMD("maim -s -k -B -u | xclip -selection clipboard -t image/png") },
 
 	/* notifications */
 	{ MODKEY,                       XK_n,      spawn,     
@@ -66,6 +69,16 @@ static Key keys[] = {
 		SHCMD("pamixer -d 1") },
 	{ 0,                            XF86XK_AudioMute,         spawn,
 		SHCMD("pamixer -t") },
+
+    /* audio/video player */
+    { 0,                            XF86AudioPlay,            spawn,
+        SCHMD("playerctl play-pause") },
+    { 0,                            XF86AudioPrev,            spawn,
+        SCHMD("playerctl previous") },
+    { 0,                            XF86AudioNext,            spawn,
+        SCHMD("playerctl next") },
+    { 0,                            XF86AudioStop,            spawn,
+        SCHMD("playerctl next") },
 	
 	/* brightness */
 	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
