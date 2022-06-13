@@ -71,13 +71,15 @@ static Key keys[] = {
 		SHCMD("pamixer -t") },
 
     /* audio/video player */
-    { 0,                            XF86AudioPlay,            spawn,
+    { 0,                            XF86_AudioPlay,            spawn,
         SCHMD("playerctl play-pause") },
-    { 0,                            XF86AudioPrev,            spawn,
+    { 0,                            XF86_AudioStop,            spawn,
+        SCHMD("playerctl stop") },
+    { 0,                            XF86_AudioPrev,            spawn,
         SCHMD("playerctl previous") },
-    { 0,                            XF86AudioNext,            spawn,
+    { 0,                            XF86_AudioNext,            spawn,
         SCHMD("playerctl next") },
-    { 0,                            XF86AudioStop,            spawn,
+    { 0,                            XF86_AudioStop,            spawn,
         SCHMD("playerctl next") },
 	
 	/* brightness */
