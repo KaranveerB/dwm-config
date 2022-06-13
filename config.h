@@ -72,15 +72,15 @@ static Key keys[] = {
 
     /* audio/video player */
     { 0,                            XF86XK_AudioPlay,            spawn,
-        SCHMD("playerctl play-pause") },
+        SHCMD("playerctl play-pause") },
     { 0,                            XF86XK_AudioStop,            spawn,
-        SCHMD("playerctl stop") },
+        SHCMD("playerctl stop") },
     { 0,                            XF86XK_AudioPrev,            spawn,
-        SCHMD("playerctl previous") },
+        SHCMD("playerctl previous") },
     { 0,                            XF86XK_AudioNext,            spawn,
-        SCHMD("playerctl next") },
+        SHCMD("playerctl next") },
     { 0,                            XF86XK_AudioStop,            spawn,
-        SCHMD("playerctl next") },
+        SHCMD("playerctl next") },
 	
 	/* brightness */
 	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
