@@ -153,7 +153,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 	/* power */
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("systemctl suspend") },
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("systemctl hibernate") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("systemctl hybrid-sleep") },
+	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD("systemctl hibernate") },
 	{ MODKEY|ShiftMask|ControlMask, XK_p,      spawn,          SHCMD("systemctl poweroff") },
 
 };
