@@ -77,29 +77,29 @@ static Key keys[] = {
 		SHCMD("pamixer -t") },
 
     /* audio/video player */
-    { 0,                            XF86XK_AudioPlay,            spawn,
+    { 0,                            XF86XK_AudioPlay,         spawn,
         SHCMD("playerctl play-pause") },
-    { 0,                            XF86XK_AudioStop,            spawn,
+    { 0,                            XF86XK_AudioStop,         spawn,
         SHCMD("playerctl stop") },
-    { 0,                            XF86XK_AudioPrev,            spawn,
+    { 0,                            XF86XK_AudioPrev,         spawn,
         SHCMD("playerctl previous") },
-    { 0,                            XF86XK_AudioNext,            spawn,
+    { 0,                            XF86XK_AudioNext,         spawn,
         SHCMD("playerctl next") },
-    { 0,                            XF86XK_AudioStop,            spawn,
+    { 0,                            XF86XK_AudioStop,         spawn,
         SHCMD("playerctl next") },
 	
 	/* brightness */
-	{ 0,                           XF86XK_MonBrightnessUp,     spawn,
+	{ 0,                           XF86XK_MonBrightnessUp,    spawn,
 		SHCMD("brightnessctl s +10%") },
-	{ ShiftMask,                   XF86XK_MonBrightnessUp,     spawn,
+	{ ShiftMask,                   XF86XK_MonBrightnessUp,    spawn,
 		SHCMD("brightnessctl s +1%")  },
-	{ 0,                           XF86XK_MonBrightnessDown,   spawn,
+	{ 0,                           XF86XK_MonBrightnessDown,  spawn,
 		SHCMD("brightnessctl s 10%-") },
-	{ ShiftMask,                   XF86XK_MonBrightnessDown,   spawn,
+	{ ShiftMask,                   XF86XK_MonBrightnessDown,  spawn,
 		SHCMD("brightnessctl s 1%-")  },
 
-	{ 0,                           XF86XK_Calculator,          spawn,
-		SHCMD("pidof speedcrunch || speedcrunch && speedcrunch")
+	{ 0,                           XF86XK_Calculator,         spawn,
+		SHCMD("pidof speedcrunch || speedcrunch && speedcrunch") },
 	
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
