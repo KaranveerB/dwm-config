@@ -97,6 +97,9 @@ static Key keys[] = {
 		SHCMD("brightnessctl s 10%-") },
 	{ ShiftMask,                   XF86XK_MonBrightnessDown,   spawn,
 		SHCMD("brightnessctl s 1%-")  },
+
+	{ 0,                           XF86XK_Calculator,          spawn,
+		SHCMD("pidof speedcrunch || speedcrunch && speedcrunch")
 	
 	/* toggle bar */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
