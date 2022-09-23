@@ -24,7 +24,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask /* Super and alt are swapped using autostart (~/.dwm/autostart_blocking.sh)  */
+#define MODKEY Mod4Mask /* Super and alt are swapped in ~/.xsessions */
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
