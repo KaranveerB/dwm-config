@@ -56,7 +56,7 @@ static Key keys[] = {
 	
 	/* screenshot */
 	{ MODKEY,                       XK_s,      spawn,
-		SHCMD("maim -s -k -B -u > ~/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png") },
+		SHCMD("maim -s -k -B -u > ~/down/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,
 		SHCMD("maim -s -k -B -u | xclip -selection clipboard -t image/png") },
 
