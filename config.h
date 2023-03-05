@@ -159,7 +159,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	
 	/* quit dwm */
-	{ MODKEY|ShiftMask|ControlMash, XK_e,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_e,      quit,           {0} },
 	/* power */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("systemctl hybrid-sleep") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("systemctl hibernate") },
