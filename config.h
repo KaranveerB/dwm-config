@@ -161,7 +161,7 @@ static Key keys[] = {
 	/* quit dwm */
 	{ MODKEY|ShiftMask|ControlMask, XK_e,      quit,           {0} },
 	/* power */
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("systemctl hybrid-sleep") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("systemctl suspend") },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("systemctl hibernate") },
 	{ MODKEY|ShiftMask|ControlMask, XK_p,      spawn,          SHCMD("systemctl poweroff") },
 
